@@ -5,7 +5,7 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ValueComponent } from './value/value.component';
-import { HttpClient } from 'selenium-webdriver/http';
+import { ValueService } from './value.service';
 
 
 @NgModule({
@@ -17,7 +17,7 @@ import { HttpClient } from 'selenium-webdriver/http';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ValueService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
