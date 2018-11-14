@@ -21,7 +21,10 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "C:/Users/Rushi/Documents/Angular/DatingApplication/DatingAppSPA/node_modules/alertifyjs/build/alertify.min.js"
+        
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
