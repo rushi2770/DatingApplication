@@ -10,7 +10,7 @@ constructor() { }
         alertify.confirm(message, function(e) {
             if (e) {
                 okCallback();
-            } else {};
+            } else {}
         });
     }
 
