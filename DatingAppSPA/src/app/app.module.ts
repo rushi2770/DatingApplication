@@ -6,6 +6,7 @@ import { BsDropdownModule } from 'ngx-bootstrap';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
+import { NgxGalleryModule } from 'ngx-gallery';
 
 import { AppComponent } from './app.component';
 import { ValueComponent } from './value/value.component';
@@ -49,6 +50,7 @@ export function tokenGetter() {
       BrowserModule,
       HttpClientModule,
       FormsModule,
+      NgxGalleryModule,
       BsDropdownModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       TabsModule.forRoot(),
