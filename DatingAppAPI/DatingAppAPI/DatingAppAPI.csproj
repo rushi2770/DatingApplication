@@ -7,6 +7,12 @@
   <ItemGroup>
     <Compile Remove="Migrations\20181120215403_ExtendedUserClass.cs" />
     <Compile Remove="Migrations\20181120215403_ExtendedUserClass.Designer.cs" />
+    <Compile Remove="Migrations\20181120222810_ExtendedUserClass.cs" />
+    <Compile Remove="Migrations\20181120222810_ExtendedUserClass.Designer.cs" />
+    <Compile Remove="Migrations\20181202171814_RefreshedDatabase.cs" />
+    <Compile Remove="Migrations\20181202171814_RefreshedDatabase.Designer.cs" />
+    <Compile Remove="Migrations\20190104201150_ExtendedUserEntity.cs" />
+    <Compile Remove="Migrations\20190104201150_ExtendedUserEntity.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,6 +21,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="4.0.1" />
+    <PackageReference Include="CloudinaryDotNet" Version="1.3.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.4" />
