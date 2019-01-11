@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace DatingAppAPI.Models
+namespace DatingAppAPI.DTOs
 {
-    public class Photo
+    public class PhotoForReturnDTO
     {
         public int Id { get; set; }
 
@@ -14,10 +17,6 @@ namespace DatingAppAPI.Models
 
         public bool IsMain { get; set; }
 
-        public string  PublicId { get; set; }
-
-        public User User { get; set; }
-
-        public int UserId { get; set; }
+        public string PublicId { get; set; }
     }
 }
