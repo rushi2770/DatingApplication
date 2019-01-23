@@ -4,14 +4,16 @@ using DatingAppAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DatingAppAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20190117194335_AddedLikeEntity")]
+    partial class AddedLikeEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,37 +32,6 @@ namespace DatingAppAPI.Migrations
                     b.HasIndex("LikeeId");
 
                     b.ToTable("Likes");
-                });
-
-            modelBuilder.Entity("DatingAppAPI.Models.Message", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Content");
-
-                    b.Property<DateTime?>("DateRead");
-
-                    b.Property<bool>("IsRead");
-
-                    b.Property<DateTime>("MessageSent");
-
-                    b.Property<bool>("RecipientDeleted");
-
-                    b.Property<int>("RecipientId");
-
-                    b.Property<bool>("SenderDeleted");
-
-                    b.Property<int>("SenderID");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RecipientId");
-
-                    b.HasIndex("SenderID");
-
-                    b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("DatingAppAPI.Models.Photo", b =>
@@ -148,19 +119,6 @@ namespace DatingAppAPI.Migrations
                     b.HasOne("DatingAppAPI.Models.User", "Liker")
                         .WithMany("Likees")
                         .HasForeignKey("LikerId")
-                        .OnDelete(DeleteBehavior.Restrict);
-                });
-
-            modelBuilder.Entity("DatingAppAPI.Models.Message", b =>
-                {
-                    b.HasOne("DatingAppAPI.Models.User", "Recipient")
-                        .WithMany("MessagesReceived")
-                        .HasForeignKey("RecipientId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.HasOne("DatingAppAPI.Models.User", "Sender")
-                        .WithMany("MessagesSent")
-                        .HasForeignKey("SenderID")
                         .OnDelete(DeleteBehavior.Restrict);
                 });
 
