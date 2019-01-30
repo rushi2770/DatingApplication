@@ -52,13 +52,13 @@ namespace DatingAppAPI.Migrations
 
                     b.Property<bool>("SenderDeleted");
 
-                    b.Property<int>("SenderID");
+                    b.Property<int>("SenderId");
 
                     b.HasKey("Id");
 
                     b.HasIndex("RecipientId");
 
-                    b.HasIndex("SenderID");
+                    b.HasIndex("SenderId");
 
                     b.ToTable("Messages");
                 });
@@ -160,7 +160,7 @@ namespace DatingAppAPI.Migrations
 
                     b.HasOne("DatingAppAPI.Models.User", "Sender")
                         .WithMany("MessagesSent")
-                        .HasForeignKey("SenderID")
+                        .HasForeignKey("SenderId")
                         .OnDelete(DeleteBehavior.Restrict);
                 });
 
