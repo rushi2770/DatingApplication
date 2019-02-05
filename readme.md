@@ -94,4 +94,4 @@ This tab has the collection of messages sent out and received with filtration of
 
 ## Acknowledgments
 
-* [Neil Cummings](https://www.linkedin.com/in/necummings) from Udemy 
+* Neil Cummings from Udemy 
