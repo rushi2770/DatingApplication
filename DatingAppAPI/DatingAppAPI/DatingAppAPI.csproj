@@ -2,22 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>3e985143-78da-42a8-b56a-80bc2f2e6993</UserSecretsId>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Migrations\20181120215403_ExtendedUserClass.cs" />
-    <Compile Remove="Migrations\20181120215403_ExtendedUserClass.Designer.cs" />
-    <Compile Remove="Migrations\20181120222810_ExtendedUserClass.cs" />
-    <Compile Remove="Migrations\20181120222810_ExtendedUserClass.Designer.cs" />
-    <Compile Remove="Migrations\20181202171814_RefreshedDatabase.cs" />
-    <Compile Remove="Migrations\20181202171814_RefreshedDatabase.Designer.cs" />
-    <Compile Remove="Migrations\20190104201150_ExtendedUserEntity.cs" />
-    <Compile Remove="Migrations\20190104201150_ExtendedUserEntity.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="4.0.1" />
@@ -26,6 +12,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.4" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.1.4" />
   </ItemGroup>
 
 </Project>

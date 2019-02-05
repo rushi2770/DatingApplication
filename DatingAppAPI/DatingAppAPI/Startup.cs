@@ -41,6 +41,8 @@ namespace DatingAppAPI
                 {
                     opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                 });
+
+            services.BuildServiceProvider().GetService<DataContext>().Database.Migrate();
             services.AddCors();
             services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             services.AddAutoMapper();
@@ -86,12 +88,20 @@ namespace DatingAppAPI
                 });
                 //app.UseHsts();
             }
-            //seeder.SeedUsers();
+            seeder.SeedUsers();
             app.UseCors(x   => x.AllowAnyHeader()
                                 .AllowAnyOrigin()
                                 .AllowAnyMethod());
             app.UseAuthentication();
-            app.UseMvc();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+            app.UseMvc(routes =>
+            {
+                routes.MapSpaFallbackRoute(
+                        name: "spa-fallback",
+                        defaults: new { Controller = "Fallback", Action = "Index" }
+                    );
+            });
         }
     }
 }
